@@ -57,7 +57,7 @@ class Game:
         self.update_player()
         
     def draw(self):
-        pyxel.cls(12)
+        pyxel.cls(7)
         pyxel.camera()
         pyxel.bltm(0,0,0,self.player.offsetx,self.player.offsety,300,300,12)
         pyxel.blt(self.player.x,

@@ -28,25 +28,25 @@ class Game:
         self.player=Player()
 
     def update_player(self):
-        if pyxel.btn(pyxel.KEY_RIGHT):
+        if pyxel.btn(pyxel.KEY_RIGHT) or pyxel.btn(pyxel.GAMEPAD1_BUTTON_DPAD_RIGHT):
             self.player.direction=Direction.RIGHT
             self.player.x = self.player.x + self.player.speed
             self.player.offsetx=self.player.offsetx+1
         else:
-            if pyxel.btn(pyxel.KEY_LEFT):
+            if pyxel.btn(pyxel.KEY_LEFT) or pyxel.btn(pyxel.GAMEPAD1_BUTTON_DPAD_LEFT):
                 self.player.direction=Direction.LEFT
                 self.player.x = self.player.x - self.player.speed
                 if self.player.offsetx>0:
                     self.player.offsetx=self.player.offsetx-1
 
             else:
-                if pyxel.btn(pyxel.KEY_UP):
+                if pyxel.btn(pyxel.KEY_UP) or pyxel.btn(pyxel.GAMEPAD1_BUTTON_DPAD_UP):
                     self.player.direction=Direction.UP
                     self.player.y=self.player.y - self.player.speed
                     if self.player.offsety>0:
                         self.player.offsety = self.player.offsety-1
                 else:
-                    if pyxel.btn(pyxel.KEY_DOWN):
+                    if pyxel.btn(pyxel.KEY_DOWN) or pyxel.btn(pyxel.GAMEPAD1_BUTTON_DPAD_DOWN):
                         self.player.direction=Direction.DOWN
                         self.player.y=self.player.y+self.player.speed
                         self.player.offsety = self.player.offsety+1
